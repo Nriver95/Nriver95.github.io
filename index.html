@@ -5,7 +5,8 @@
 		<meta charset="utf-8">
         <meta name="viewport" content="width=device-width" />
 		<title>Nick's Portfolio</title>
-        <link rel="stylesheet" type="text/css" href="css/portfolioCSS.css">
+        <link rel="shortcut icon" type="img/jpg" href="images/coding_icon.png">
+        <link rel="stylesheet" type="text/css" href="css/portfolio.css">
 	</head>
 	
     <!--Body-->
@@ -14,9 +15,11 @@
         <!--Navbar-->
         <div class="navbar">
             <a class="active" href="#home">Home</a>
+            <a href="#slideshow">Slideshow</a>
             <a href="#about">About</a>
             <a href="#github">GitHub</a>
-            <a href="#contact">Contact</a>
+            <!--added onclick and ondbclick contact form popup-->
+            <a onclick="openForm()" ondbclick="closeForm()" class="contact">Contact</a>
         </div>
 
         <!--Break between navbar and heading-->
@@ -33,21 +36,73 @@
         </div>
 
         <!--Video Text Overlay-->
-        <div class="videoTextOverlay">
+        <div class="video_text_overlay">
             <h1 class="whiteText">Nicholas Rivera's Portfolio</h1>
             <strong>
                 <p style="text-align: center">
                     Programs are like the night sky. When you look at the sky as a whole it's a sight to behold, much like a well designed webpage or program.<br>
                     And when you look closely you can see that all the colors and shapes are individual stars and galaxies.<br>
                     The vastness, variety of stars, and what it must have taken to get the beautiful picture that is the night sky can seem overwhelming.<br>
-                    But very star, like every line of code, has it's place no matter how small. Carefully making sure every line is in the right place is what I do.<br>
+                    But every star, like every line of code, has it's place no matter how small. Carefully making sure every line is in the right place is what I do.<br>
                     I strive to make things that people can admire even momentarily in passing. One star at a time.
                     <br>
                     <br>I am Nick and this is my portfolio website.  I'll show you a little about my background and experience.
                     <br>
-                    <br>Thank you for your time
+                    <br>Thank you for your time.
                 </p>
             </strong>
+        </div>
+
+        <!--Slideshow-->
+        <div id="slideshow">
+            <div id="slideshowBackground">
+                <div id="slideshowContainer">
+                    <!--slide 1-->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="images/Square Custom Picture.png" alt="Picture of myself">
+                        <div class="text">I'm available to assist you on your project!</div>
+                    </div>
+                    <!--slide 1-->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="images/HTML_CSS_and_JavaScript.jpeg" alt="Image of HTML CSS and JavaScript icons">
+                        <div class="text">I am a full-stack developer. I've trained in HTML, CSS, Javascript, </div>
+                    </div>
+                    <!--slide 1-->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="images/SQL_and_Database.jpg" alt="Image of SQL icon">
+                        <div class="text">SQL, </div>
+                    </div>
+                    <!--slide 1-->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="images/C_Sharp_and_Dot_NET.png" alt="C Sharp and DOT NET icon">
+                        <div class="text">C# and .NET framework.</div>
+                    </div>
+                    <!--slide 1-->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="images/Square Custom Picture.png" alt="temp">
+                        <div class="text">temp</div>
+                    </div>
+                    <!--slide 1-->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="images/Square Custom Picture.png" alt="temp">
+                        <div class="text">temp</div>
+                    </div>
+                    <!--Prev and Next-->
+                    <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(+1)">&#10095;</a>
+                </div>
+                <br> <!--Adds a space between the slideshow images and the dots-->
+
+                <!--Slideshow dots (these are another way for users to navigate through the slideshow)-->
+                <div style="text-align: center">
+                    <span class="dots" onclick="currentSlide(1)"></span>
+                    <span class="dots" onclick="currentSlide(2)"></span>
+                    <span class="dots" onclick="currentSlide(3)"></span>
+                    <span class="dots" onclick="currentSlide(4)"></span>
+                    <span class="dots" onclick="currentSlide(5)"></span>
+                    <span class="dots" onclick="currentSlide(6)"></span>
+                </div>
+            </div>
         </div>
 
         <!--About section-->
@@ -59,7 +114,7 @@
             <!--Right column-->
             <div class="column_1">
                 <h1>About</h1>
-                <p>
+                <p style="font-size: 1.15vw;">
                     I'm a software developer and I think this work is a lot of fun. They say that if you love what you do it isn't work and that's how I feel about coding.
                     <br>The tenacity that comes from being a 9 year Army National Guard veteran has helped me stay resilient with any challenges that I have and may face.
                     <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>'s Software Development Bootcamp. I'm trained in HTML, CSS, JavaScript, SQL, C#, and more.
@@ -87,26 +142,27 @@
         </div>
 
         <!--Contact section-->
-        <div class="row" id="contact">
-            <!--Contact image, left column-->
-            <div class="column_2 column_tall">
-                <img src="images/spaceMessage.jpeg" alt="An image of a person standing under the night sky sending light signals up with a flashlight.">
-            </div>
-            <!--Contact form, right column-->
-            <div class="column_1 column_tall">
-                <h1>Contact</h1>
-                <!--This specifies where and how to send the form data; we are leaving it blank-->
-                <form action="https://formspree.io/f/xzbqopee" method="POST"> <!--Here we are utilizing a 3rd party service to sumbit the contact form data, insert your formspree endpoint in the action attribute-->
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name">
-                    <label>Email:</label>
-                        <input type="text" id="email" name="email" placeholder="Please enter your email">
-                    <label>Message:</label>
-                        <input type="text" id="message" name="message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">
+        <div id="contact">
+            <button onclick="openForm()" class="pop_up_button">Contact</button>
+            <div class="form_popup" id="myForm">
+                <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form_container">
+                    <!--using free online service from formspree.io to send contact form to an email address of our choosing -  not: it will not run unless live on the internet, you have to push it to your online website first-->
+                        <h1>Contact</h1>
+                        <label for="name"><b>Name</b></label>
+                            <input type="text" placeholder="Type your name here" name="name" required>
+                        <label for="phone"><b>Phone</b></label>
+                            <input type="text" placeholder="Type your phone number here" name="phone">
+                        <label for="email"><b>Email</b></label>
+                            <input type="text" placeholder="Type your email address here" name="email" required>
+                        <label for="messages"><b>Messages</b></label>
+                            <input type="text" placeholder="Type your message here" name="message">
+
+                        <button type="submit" class="btn">SUBMIT</button>
+                        <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
             </div>
         </div>
+
 
         <!--Footer section-->
         <footer>
@@ -114,5 +170,6 @@
                 <p class="center"></p>&copy Prosper Consulting Inc., <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a>
             </p>
         </footer>
+        <script src="JS/portfolio.js"></script>
 	</body>
 </html> 
