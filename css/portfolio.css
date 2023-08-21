@@ -435,7 +435,7 @@ button:hover, .form_container .btn:hover {
 }
 
 /*submit button*/
-.form-container .btn{
+.btn{
     background-color: white;
     color: black;
     border-color: black;
@@ -443,17 +443,18 @@ button:hover, .form_container .btn:hover {
 }
 
 /*close button*/
-.form_container .cancel{
+.cancel{
     background-color: black;
     color: white;
     border-color: gray;
 }
 
 /*styling for close button on hover*/
-.form-container .cancel:hover{
-    color: white;
-    background-color: darkred;
+.cancel:hover{
+    color: red;
+    background-color: white;
     transition-duration: 1s;
+    -webkit-transition-duration: 1s;
     border-color: black;
 }
 
